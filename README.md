@@ -9,7 +9,9 @@
 ### Setting up gtest on Linux
 **This setup has only been tested on Ubuntu**
 **It may need to be modified for other distibutions**
+
 1. download gtest using wget http://googletest.googlecode.com/files/gtest-1.7.0.zip
+
 2. unzip the file 
 
 ```
@@ -43,3 +45,4 @@ if the out put looks like:
 libgtest.so -> libgtest.so.0.0.0
 libgtest_main.so.0 ->libgtest_main.so.0.0.0
 ```
+then you are ready to use gtest
