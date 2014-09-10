@@ -9,7 +9,9 @@
 ### Setting up gtest on Linux
 **This setup has only been tested on Ubuntu**
 **It may need to be modified for other distibutions**
+
 1. download gtest using wget http://googletest.googlecode.com/files/gtest-1.7.0.zip
+
 2. unzip the file 
 
 ```
