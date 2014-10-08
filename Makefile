@@ -17,7 +17,8 @@
 GTEST_DIR = ./gtest/
 
 # Where to find user code.
-USER_DIR = ./
+USER_DIR = ./tests
+STUdENT_DIR = ./
 
 # Flags passed to the preprocessor.
 # Set Google Test's header directory as a system directory, such that
