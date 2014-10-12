@@ -14,11 +14,10 @@
 
 # Points to the root of Google Test, relative to where this file is.
 # Remember to tweak this if you move this file.
-GTEST_DIR = ./gtest/
+GTEST_DIR = ../../gtest
 
 # Where to find user code.
-USER_DIR = ./tests
-STUdENT_DIR = ./
+USER_DIR = ../samples
 
 # Flags passed to the preprocessor.
 # Set Google Test's header directory as a system directory, such that
@@ -26,11 +25,11 @@ STUdENT_DIR = ./
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g -Wall -Wextra -pthread
+CXXFLAGS += -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = sample1_unittest
+TESTS = student_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -72,11 +71,12 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-#sample1.o : $(USER_DIR)/test.cc $(GTEST_HEADERS)
-#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test.cc
+template.project1.part1.o : template.project1.part1.c $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c template.project1.part1.c
 
-test.o : $(USER_DIR)/test.cc $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test.cc
+test.o : ./tests/test.cc \
+                     $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c ./tests/test.cc
 
-sample1_unittest : test.o gtest_main.a
+student_unittest : template.project1.part1.o test.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
